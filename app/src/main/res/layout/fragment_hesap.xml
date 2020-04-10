@@ -21,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tv_BaslikKafa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Vücut Kitle İndeksimi Bul"
@@ -29,6 +29,68 @@
             app:layout_constraintEnd_toEndOf="@+id/imageView3"
             app:layout_constraintStart_toStartOf="@+id/imageView3"
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+
+        <EditText
+            android:id="@+id/tv_kitle_boy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:ems="10"
+            android:hint="boyunuz"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="@+id/tv_BaslikKafa"
+            app:layout_constraintStart_toStartOf="@+id/tv_BaslikKafa"
+            app:layout_constraintTop_toBottomOf="@+id/tv_BaslikKafa" />
+
+        <EditText
+            android:id="@+id/tv_kitle_yas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:ems="10"
+            android:hint="yaşınız"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="@+id/tv_kitle_kilo"
+            app:layout_constraintStart_toStartOf="@+id/tv_kitle_kilo"
+            app:layout_constraintTop_toBottomOf="@+id/tv_kitle_kilo" />
+
+        <EditText
+            android:id="@+id/tv_kitle_kilo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:ems="10"
+            android:hint="kilonuz"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="@+id/tv_kitle_boy"
+            app:layout_constraintStart_toStartOf="@+id/tv_kitle_boy"
+            app:layout_constraintTop_toBottomOf="@+id/tv_kitle_boy" />
+
+        <Button
+            android:id="@+id/btn_kitle_sonuc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:text="SONUÇ"
+            app:layout_constraintCircleRadius="25dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_kitle_cins"
+            app:layout_constraintStart_toStartOf="@+id/tv_kitle_cins"
+            app:layout_constraintTop_toBottomOf="@+id/tv_kitle_cins" />
+
+        <EditText
+            android:id="@+id/tv_kitle_cins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Cinsiyetiniz"
+            app:layout_constraintEnd_toEndOf="@+id/tv_kitle_yas"
+            app:layout_constraintStart_toStartOf="@+id/tv_kitle_yas"
+            app:layout_constraintTop_toBottomOf="@+id/tv_kitle_yas" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

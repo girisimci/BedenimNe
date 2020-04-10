@@ -17,14 +17,19 @@ class MainActivity : AppCompatActivity() {
     lateinit var mAdView: AdView
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        MobileAds.initialize(this) { "ca-app-pub-4583834812275695~1580063729" }
+        MobileAds.initialize(this) {
+            "ca-app-pub-3940256099942544/6300978111"
+        }
+
         mAdView = findViewById(R.id.adView)
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
+
 
         val tab = findViewById<TabLayout>(R.id.tab)
 
@@ -55,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
             when (position) {
                 0 -> return home()
-                1 -> return kafa()
+                1 -> return omuz()
                 2 -> return bel()
                 else -> return hesap()
             }

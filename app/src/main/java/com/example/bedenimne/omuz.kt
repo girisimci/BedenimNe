@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-class kafa : Fragment() {
+class omuz : Fragment() {
 
 
     override fun onCreateView(
@@ -14,6 +14,6 @@ class kafa : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_kafa, container, false)
+        return inflater.inflate(R.layout.fragment_omuz, container, false)
     }
 }
