@@ -8,10 +8,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 
 
 class home : Fragment() {
 
+    lateinit var mAdView: AdView
     private lateinit var olcusu: EditText
     private lateinit var btn: Button
     private lateinit var cevap: TextView
@@ -22,8 +26,19 @@ class home : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         inflater.inflate(R.layout.fragment_home, container, false)
-
         var view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        MobileAds.initialize(context) {
+            "ca-app-pub-3940256099942544/6300978111"
+        }
+        mAdView = view.findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
+        /*val adView = AdView(context)
+        adView.adSize = AdSize.BANNER
+        adView.adUnitId = "ca-app-pub-3940256099942544/6300978111"*/
+
         olcusu = view.findViewById(R.id.tv_kafa_olcu)
         btn = view.findViewById(R.id.btn_kafa_sonuc)
         cevap = view.findViewById(R.id.tv_kafa_cevap)

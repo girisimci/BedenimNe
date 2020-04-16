@@ -13,8 +13,8 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
             android:src="@drawable/cloth"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
             android:ems="10"
-            android:hint="Omuz ölçünüzü giriniz..."
+            android:hint="Göğüs genişliğinizi giriniz..."
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="@+id/tv_BaslikKafa"
             app:layout_constraintStart_toStartOf="@+id/tv_BaslikKafa"
@@ -55,29 +55,39 @@
             app:layout_constraintStart_toStartOf="@+id/tv_omuz_olcu"
             app:layout_constraintTop_toBottomOf="@+id/tv_omuz_olcu" />
 
-        <EditText
-            android:id="@+id/tv_omuz_kilo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:ems="10"
-            android:hint="Kilonuzu giriniz..."
-            android:inputType="number"
-            app:layout_constraintEnd_toEndOf="@+id/tv_omuz_boy"
-            app:layout_constraintStart_toStartOf="@+id/tv_omuz_boy"
-            app:layout_constraintTop_toBottomOf="@+id/tv_omuz_boy" />
-
         <Button
-            android:id="@+id/btn_kitle_sonuc"
+            android:id="@+id/btn_omuz_erkek"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@color/colorPrimary"
-            android:text="SONUÇ"
+            android:text="ERKEK SONUÇ"
+            android:textSize="12sp"
             app:layout_constraintCircleRadius="25dp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_omuz_kilo"
-            app:layout_constraintStart_toStartOf="@+id/tv_omuz_kilo"
-            app:layout_constraintTop_toBottomOf="@+id/tv_omuz_kilo" />
+            app:layout_constraintStart_toStartOf="@+id/tv_omuz_boy"
+            app:layout_constraintTop_toBottomOf="@+id/tv_omuz_boy" />
+
+        <Button
+            android:id="@+id/btn_omuz_kadin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:text="KADIN SONUÇ"
+            android:textSize="12sp"
+            app:layout_constraintCircleRadius="25dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_omuz_boy"
+            app:layout_constraintTop_toBottomOf="@+id/tv_omuz_boy" />
+
+        <TextView
+            android:id="@+id/tv_omuz_sonuc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/btn_omuz_kadin"
+            app:layout_constraintStart_toStartOf="@+id/btn_omuz_erkek"
+            app:layout_constraintTop_toBottomOf="@+id/btn_omuz_erkek" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
