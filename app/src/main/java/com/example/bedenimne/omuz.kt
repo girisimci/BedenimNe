@@ -40,7 +40,7 @@ class omuz : Fragment() {
             var yukseklik = boy?.text.toString().toInt()
             cevap?.text.toString()
 
-
+            //sonuç başarıyla döndürüldü
 
             if (genislik in 82..86 && yukseklik in 158..162) {
                 cevap!!.text = "T-Shirt Bedeniniz XS'dir."
