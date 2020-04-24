@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".hesap">
@@ -24,7 +25,7 @@
             android:id="@+id/tv_BaslikKafa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Vücut Kitle İndeksimi Bul"
+            android:text="Alt İç Giyim Bedenimi Bul"
             android:textSize="26sp"
             app:layout_constraintEnd_toEndOf="@+id/imageView3"
             app:layout_constraintStart_toStartOf="@+id/imageView3"
@@ -32,64 +33,62 @@
 
 
         <EditText
-            android:id="@+id/tv_kitle_boy"
+            android:id="@+id/tv_bel_alim"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="8dp"
             android:ems="10"
-            android:hint="boyunuz"
+            android:hint="Bel ölçünüzü giriniz..."
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="@+id/tv_BaslikKafa"
             app:layout_constraintStart_toStartOf="@+id/tv_BaslikKafa"
             app:layout_constraintTop_toBottomOf="@+id/tv_BaslikKafa" />
 
-        <EditText
-            android:id="@+id/tv_kitle_yas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:ems="10"
-            android:hint="yaşınız"
-            android:inputType="number"
-            app:layout_constraintEnd_toEndOf="@+id/tv_kitle_kilo"
-            app:layout_constraintStart_toStartOf="@+id/tv_kitle_kilo"
-            app:layout_constraintTop_toBottomOf="@+id/tv_kitle_kilo" />
-
-        <EditText
-            android:id="@+id/tv_kitle_kilo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:ems="10"
-            android:hint="kilonuz"
-            android:inputType="number"
-            app:layout_constraintEnd_toEndOf="@+id/tv_kitle_boy"
-            app:layout_constraintStart_toStartOf="@+id/tv_kitle_boy"
-            app:layout_constraintTop_toBottomOf="@+id/tv_kitle_boy" />
-
         <Button
-            android:id="@+id/btn_omuz_erkek"
+            android:id="@+id/btn_ic_kadin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@color/colorPrimary"
-            android:text="SONUÇ"
+            android:text="KADIN SONUÇ"
             app:layout_constraintCircleRadius="25dp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_kitle_cins"
-            app:layout_constraintStart_toStartOf="@+id/tv_kitle_cins"
-            app:layout_constraintTop_toBottomOf="@+id/tv_kitle_cins" />
+            app:layout_constraintEnd_toEndOf="@+id/tv_bel_alim"
+            app:layout_constraintTop_toBottomOf="@+id/tv_bel_alim" />
 
-        <EditText
-            android:id="@+id/tv_kitle_cins"
+        <Button
+            android:id="@+id/btn_ic_erkek"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Cinsiyetiniz"
-            app:layout_constraintEnd_toEndOf="@+id/tv_kitle_yas"
-            app:layout_constraintStart_toStartOf="@+id/tv_kitle_yas"
-            app:layout_constraintTop_toBottomOf="@+id/tv_kitle_yas" />
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:text="ERKEK SONUÇ"
+            app:layout_constraintCircleRadius="25dp"
+            app:layout_constraintStart_toStartOf="@+id/tv_bel_alim"
+            app:layout_constraintTop_toBottomOf="@+id/tv_bel_alim" />
+
+        <TextView
+            android:id="@+id/sonuclarim_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/btn_ic_kadin"
+            app:layout_constraintStart_toStartOf="@+id/btn_ic_erkek"
+            app:layout_constraintTop_toBottomOf="@+id/btn_ic_erkek" />
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sonuclarim_tv"
+            tools:ignore="MissingConstraints" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

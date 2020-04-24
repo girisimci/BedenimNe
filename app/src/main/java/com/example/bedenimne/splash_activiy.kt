@@ -1,9 +1,9 @@
 package com.example.bedenimne
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import androidx.appcompat.app.AppCompatActivity
 
 class splash_activiy : AppCompatActivity() {
 
@@ -14,7 +14,7 @@ class splash_activiy : AppCompatActivity() {
 
         handler= Handler()
         handler.postDelayed({
-            val intent=Intent(this,MainActivity::class.java)
+            val intent = Intent(this, tanitimActivity::class.java)
             startActivity(intent)
             finish()
         },3000)

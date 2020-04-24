@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
@@ -16,9 +17,9 @@ import com.google.android.gms.ads.MobileAds
 class home : Fragment() {
 
     lateinit var mAdView: AdView
-    private lateinit var olcusu: EditText
-    private lateinit var btn: Button
-    private lateinit var cevap: TextView
+    private var olcusu: EditText? = null
+    private var btn: Button? = null
+    private var cevap: TextView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,26 +44,31 @@ class home : Fragment() {
         btn = view.findViewById(R.id.btn_kafa_sonuc)
         cevap = view.findViewById(R.id.tv_kafa_cevap)
 
-        btn.setOnClickListener {
 
 
-            var girdi: Int = olcusu.text.toString().toInt()
-            cevap.text.toString()
+        btn!!.setOnClickListener {
+            if (olcusu?.text.toString().isNullOrEmpty()) {
+                Toast.makeText(context, "LÜTFEN ÖLÇÜLERİ GİRİNİZ!", Toast.LENGTH_SHORT).show()
+            } else {
+                var girdi = olcusu?.text.toString()
+                cevap?.text.toString()
 
 
-            when (girdi) {
-                53 -> cevap.text = "Şapka Bedeniniz XS'dir"
-                54 -> cevap.text = "Şapka Bedeniniz XS'dir"
-                55 -> cevap.text = "Şapka Bedeniniz S'dir"
-                56 -> cevap.text = "Şapka Bedeniniz S'dir"
-                57 -> cevap.text = "Şapka Bedeniniz M'dir"
-                58 -> cevap.text = "Şapka Bedeniniz M'dir"
-                59 -> cevap.text = "Şapka Bedeniniz L'dir"
-                60 -> cevap.text = "Şapka Bedeniniz L'dir"
-                61 -> cevap.text = "Şapka Bedeniniz XL'dir"
-                62 -> cevap.text = "Şapka Bedeniniz XL'dir"
+                when (girdi) {
+                    "53" -> cevap?.text = "Şapka Bedeniniz XS'dir"
+                    "54" -> cevap?.text = "Şapka Bedeniniz XS'dir"
+                    "55" -> cevap?.text = "Şapka Bedeniniz S'dir"
+                    "56" -> cevap?.text = "Şapka Bedeniniz S'dir"
+                    "57" -> cevap?.text = "Şapka Bedeniniz M'dir"
+                    "58" -> cevap?.text = "Şapka Bedeniniz M'dir"
+                    "59" -> cevap?.text = "Şapka Bedeniniz L'dir"
+                    "60" -> cevap?.text = "Şapka Bedeniniz L'dir"
+                    "61" -> cevap?.text = "Şapka Bedeniniz XL'dir"
+                    "62" -> cevap?.text = "Şapka Bedeniniz XL'dir"
 
-                else -> cevap.text = "Şapka Bedeniniz Bilinmiyor!"
+                    else -> cevap?.text = "Şapka Bedeniniz Bilinmiyor!"
+                }
+
             }
 
         }

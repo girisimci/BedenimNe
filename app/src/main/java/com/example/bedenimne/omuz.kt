@@ -7,11 +7,15 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 
 class omuz : Fragment() {
 
-
+    lateinit var mAdView: AdView
     private var en: EditText? = null
     private var boy: EditText? = null
     private var btnErkek: Button? = null
@@ -26,9 +30,17 @@ class omuz : Fragment() {
         inflater.inflate(R.layout.fragment_omuz, container, false)
 
         var view = inflater.inflate(R.layout.fragment_omuz, container, false)
+
+        MobileAds.initialize(context) {
+            "ca-app-pub-3940256099942544/6300978111"
+        }
+        mAdView = view.findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
         en = view.findViewById(R.id.tv_omuz_olcu) as? EditText
         boy = view.findViewById(R.id.tv_omuz_boy) as? EditText
-        btnErkek = view.findViewById(R.id.btn_omuz_erkek) as? Button
+        btnErkek = view.findViewById(R.id.btn_ic_kadin) as? Button
         btnKadin = view.findViewById(R.id.btn_omuz_kadin) as? Button
         cevap = view.findViewById(R.id.tv_omuz_sonuc) as? TextView
 
@@ -36,61 +48,70 @@ class omuz : Fragment() {
 
         btnKadin?.setOnClickListener {
 
-            var genislik = en?.text.toString().toInt()
-            var yukseklik = boy?.text.toString().toInt()
-            cevap?.text.toString()
-
-            //sonuç başarıyla döndürüldü
-
-            if (genislik in 82..86 && yukseklik in 158..162) {
-                cevap!!.text = "T-Shirt Bedeniniz XS'dir."
-            } else if (genislik in 86..90 && yukseklik in 162..166) {
-                cevap!!.text = "T-Shirt Bedeniniz S'dir."
-            } else if (genislik in 90..96 && yukseklik in 166..170) {
-                cevap!!.text = "T-Shirt Bedeniniz M'dir."
-            } else if (genislik in 96..102 && yukseklik in 170..174) {
-                cevap!!.text = "T-Shirt Bedeniniz L'dir."
-            } else if (genislik in 102..110 && yukseklik in 174..178) {
-                cevap!!.text = "T-Shirt Bedeniniz XL'dir."
-            } else if (genislik in 110..116 && yukseklik in 178..180) {
-                cevap!!.text = "T-Shirt Bedeniniz XXL'dir."
+            if (en?.text.toString().isNullOrEmpty() && boy?.text.toString().isNullOrEmpty()) {
+                Toast.makeText(context, "LÜTFEN ÖLÇÜLERİ GİRİNİZ!", Toast.LENGTH_SHORT).show()
             } else {
-                cevap!!.text = "Böyle bir sonuç bulunamamaktadır."
+                var genislik = en?.text.toString().toInt()
+                var yukseklik = boy?.text.toString().toInt()
+
+                cevap?.text.toString()
+
+
+                //sonuç başarıyla döndürüldü
+
+                if (genislik in 82..86 && yukseklik in 158..162) {
+                    cevap?.text = "T-Shirt Bedeniniz XS'dir."
+                } else if (genislik in 86..90 && yukseklik in 162..166) {
+                    cevap?.text = "T-Shirt Bedeniniz S'dir."
+                } else if (genislik in 90..96 && yukseklik in 166..170) {
+                    cevap?.text = "T-Shirt Bedeniniz M'dir."
+                } else if (genislik in 96..102 && yukseklik in 170..174) {
+                    cevap?.text = "T-Shirt Bedeniniz L'dir."
+                } else if (genislik in 102..110 && yukseklik in 174..178) {
+                    cevap?.text = "T-Shirt Bedeniniz XL'dir."
+                } else if (genislik in 110..116 && yukseklik in 178..180) {
+                    cevap?.text = "T-Shirt Bedeniniz XXL'dir."
+                } else {
+                    cevap?.text = "Böyle bir sonuç bulunamamaktadır."
+                }
+
             }
-
-
         }
 
 
         btnErkek?.setOnClickListener {
 
-            var genislik = en?.text.toString().toInt()
-            var yukseklik = boy?.text.toString().toInt()
-            cevap?.text.toString()
-
-
-
-            if (genislik in 90..94 && yukseklik in 168..172) {
-                cevap!!.text = "T-Shirt Bedeniniz XS'dir."
-            } else if (genislik in 94..100 && yukseklik in 172..176) {
-                cevap!!.text = "T-Shirt Bedeniniz S'dir."
-            } else if (genislik in 100..104 && yukseklik in 176..180) {
-                cevap!!.text = "T-Shirt Bedeniniz M'dir."
-            } else if (genislik in 104..112 && yukseklik in 180..184) {
-                cevap!!.text = "T-Shirt Bedeniniz L'dir."
-            } else if (genislik in 112..120 && yukseklik in 184..188) {
-                cevap!!.text = "T-Shirt Bedeniniz XL'dir."
-            } else if (genislik in 120..128 && yukseklik in 188..192) {
-                cevap!!.text = "T-Shirt Bedeniniz XXL'dir."
-            } else if (genislik in 120..128 && yukseklik in 188..192) {
-                cevap!!.text = "T-Shirt Bedeniniz XXXL'dir."
+            if (en?.text.toString().isNullOrEmpty() && boy?.text.toString().isNullOrEmpty()) {
+                Toast.makeText(context, "LÜTFEN ÖLÇÜLERİ GİRİNİZ!", Toast.LENGTH_SHORT).show()
             } else {
-                cevap!!.text = "Böyle bir sonuç bulunamamaktadır."
+
+                var genislik = en?.text.toString().toInt()
+                var yukseklik = boy?.text.toString().toInt()
+                cevap?.text.toString()
+
+
+
+                if (genislik in 70..94 && yukseklik in 160..170) {
+                    cevap?.text = "T-Shirt Bedeniniz XS'dir."
+                } else if (genislik in 70..100 && yukseklik in 160..176) {
+                    cevap?.text = "T-Shirt Bedeniniz S'dir."
+                } else if (genislik in 70..104 && yukseklik in 160..180) {
+                    cevap?.text = "T-Shirt Bedeniniz M'dir."
+                } else if (genislik in 70..112 && yukseklik in 160..184) {
+                    cevap?.text = "T-Shirt Bedeniniz L'dir."
+                } else if (genislik in 70..120 && yukseklik in 160..188) {
+                    cevap?.text = "T-Shirt Bedeniniz XL'dir."
+                } else if (genislik in 70..128 && yukseklik in 160..192) {
+                    cevap?.text = "T-Shirt Bedeniniz XXL'dir."
+                } else if (genislik in 90..135 && yukseklik in 160..192) {
+                    cevap?.text = "T-Shirt Bedeniniz XXXL'dir."
+                } else {
+                    cevap?.text = "Böyle bir sonuç bulunamamaktadır."
+                }
+
+
             }
-
-
         }
-
 
 
 
