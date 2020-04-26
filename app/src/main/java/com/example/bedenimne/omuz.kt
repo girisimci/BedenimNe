@@ -59,20 +59,21 @@ class omuz : Fragment() {
 
                 //sonuç başarıyla döndürüldü
 
-                if (genislik in 82..86 && yukseklik in 158..162) {
+                if (genislik in 75..82 && yukseklik in 59..93) {
                     cevap?.text = "T-Shirt Bedeniniz XS'dir."
-                } else if (genislik in 86..90 && yukseklik in 162..166) {
+                } else if (genislik in 83..87 && yukseklik in 59..93) {
                     cevap?.text = "T-Shirt Bedeniniz S'dir."
-                } else if (genislik in 90..96 && yukseklik in 166..170) {
+                } else if (genislik in 88..92 && yukseklik in 59..93) {
                     cevap?.text = "T-Shirt Bedeniniz M'dir."
-                } else if (genislik in 96..102 && yukseklik in 170..174) {
+                } else if (genislik in 93..98 && yukseklik in 59..93) {
                     cevap?.text = "T-Shirt Bedeniniz L'dir."
-                } else if (genislik in 102..110 && yukseklik in 174..178) {
+                } else if (genislik in 99..105 && yukseklik in 59..93) {
                     cevap?.text = "T-Shirt Bedeniniz XL'dir."
-                } else if (genislik in 110..116 && yukseklik in 178..180) {
+                } else if (genislik in 106..116 && yukseklik in 59..100) {
                     cevap?.text = "T-Shirt Bedeniniz XXL'dir."
                 } else {
-                    cevap?.text = "Böyle bir sonuç bulunamamaktadır."
+                    cevap?.text =
+                        "Standart dışı beden ölçüleri girdiniz,lütfen kontrol edip tekrar deneyin."
                 }
 
             }
@@ -91,22 +92,23 @@ class omuz : Fragment() {
 
 
 
-                if (genislik in 70..94 && yukseklik in 160..170) {
+                if (genislik in 80..91 && yukseklik in 60..108) {
                     cevap?.text = "T-Shirt Bedeniniz XS'dir."
-                } else if (genislik in 70..100 && yukseklik in 160..176) {
+                } else if (genislik in 92..96 && yukseklik in 69..108) {
                     cevap?.text = "T-Shirt Bedeniniz S'dir."
-                } else if (genislik in 70..104 && yukseklik in 160..180) {
+                } else if (genislik in 97..101 && yukseklik in 69..108) {
                     cevap?.text = "T-Shirt Bedeniniz M'dir."
-                } else if (genislik in 70..112 && yukseklik in 160..184) {
+                } else if (genislik in 102..106 && yukseklik in 69..108) {
                     cevap?.text = "T-Shirt Bedeniniz L'dir."
-                } else if (genislik in 70..120 && yukseklik in 160..188) {
+                } else if (genislik in 107..111 && yukseklik in 69..108) {
                     cevap?.text = "T-Shirt Bedeniniz XL'dir."
-                } else if (genislik in 70..128 && yukseklik in 160..192) {
+                } else if (genislik in 112..118 && yukseklik in 69..108) {
                     cevap?.text = "T-Shirt Bedeniniz XXL'dir."
-                } else if (genislik in 90..135 && yukseklik in 160..192) {
+                } else if (genislik in 119..130 && yukseklik in 69..108) {
                     cevap?.text = "T-Shirt Bedeniniz XXXL'dir."
                 } else {
-                    cevap?.text = "Böyle bir sonuç bulunamamaktadır."
+                    cevap?.text =
+                        "Standart dışı beden ölçüleri girdiniz,lütfen kontrol edip tekrar deneyin."
                 }
 
 

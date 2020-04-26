@@ -66,7 +66,8 @@ class home : Fragment() {
                     "61" -> cevap?.text = "Şapka Bedeniniz XL'dir"
                     "62" -> cevap?.text = "Şapka Bedeniniz XL'dir"
 
-                    else -> cevap?.text = "Şapka Bedeniniz Bilinmiyor!"
+                    else -> cevap?.text =
+                        "Standart dışı beden ölçüleri girdiniz,lütfen kontrol edip tekrar deneyin."
                 }
 
             }

@@ -68,7 +68,8 @@ class hesap : Fragment() {
                 } else if (girdi in 117..122) {
                     cevap!!.text = "İç Çamaşır Bedeniniz 4XL'dir."
                 } else {
-                    cevap!!.text = "Girdiğiniz sayı eksik veya hatalı."
+                    cevap!!.text =
+                        "Standart dışı beden ölçüleri girdiniz,lütfen kontrol edip tekrar deneyin."
                 }
 
             }
@@ -100,7 +101,8 @@ class hesap : Fragment() {
                 } else if (girdi in 112..117) {
                     cevap!!.text = "İç Çamaşır Bedeniniz 4XL'dir."
                 } else {
-                    cevap!!.text = "Girdiğiniz sayı eksik veya hatalı."
+                    cevap!!.text =
+                        "Standart dışı beden ölçüleri girdiniz,lütfen kontrol edip tekrar deneyin."
                 }
 
             }
